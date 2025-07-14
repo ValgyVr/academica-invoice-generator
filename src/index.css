@@ -123,3 +123,41 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .animate-delay-100 {
+    animation-delay: 0.1s;
+  }
+  
+  .animate-delay-200 {
+    animation-delay: 0.2s;
+  }
+  
+  .animate-delay-300 {
+    animation-delay: 0.3s;
+  }
+  
+  .animate-delay-400 {
+    animation-delay: 0.4s;
+  }
+  
+  .animate-delay-500 {
+    animation-delay: 0.5s;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .hover-lift:hover {
+    @apply transform -translate-y-1 shadow-lg;
+  }
+  
+  .glow-effect {
+    @apply transition-all duration-300;
+  }
+  
+  .glow-effect:hover {
+    @apply shadow-[0_0_20px_rgba(220,38,38,0.3)];
+  }
+}
