@@ -10,8 +10,7 @@ export const InvoiceGenerator = () => {
 
   const handleGenerateInvoice = async () => {
     setIsGenerating(true);
-    
-    // Simulate PDF generation process
+
     setTimeout(() => {
       setIsGenerating(false);
       toast({
@@ -19,11 +18,15 @@ export const InvoiceGenerator = () => {
         description: "A fatura da Académica Lda. foi gerada e está pronta para download.",
         duration: 5000,
       });
-    }, 2000);
 
-    // TODO: Adicionar aqui a lógica para gerar o PDF real
-    // Aqui você pode integrar com uma biblioteca como jsPDF, PDFKit ou
-    // fazer uma chamada para um serviço backend que gere o PDF
+      // Disparar o download do PDF
+      const link = document.createElement("a");
+      link.href = "/pdfs/Academica.pdf"; // caminho relativo dentro da pasta public
+      link.download = "Fatura-Academica.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }, 2000);
   };
 
   return (
